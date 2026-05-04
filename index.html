@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Neon Outbreak</title>
+    <style>
+      html, body { margin: 0; overflow: hidden; background: #07070a; }
+      #hud { position: fixed; top: 12px; left: 12px; color: #9df7ff; font-family: Arial, sans-serif; font-size: 14px; text-shadow: 0 0 8px rgba(0, 255, 255, 0.4); z-index: 10; }
+      #hud .bar { width: 220px; height: 10px; background: #1b1b24; border: 1px solid #2a2a3a; margin: 6px 0 12px; }
+      #hud .fill { height: 100%; background: #1ce7a3; width: 100%; }
+      .overlay { position: fixed; inset: 0; display: none; align-items: center; justify-content: center; background: rgba(5, 5, 8, 0.82); color: white; font-family: Arial, sans-serif; flex-direction: column; z-index: 30; }
+      button { padding: 10px 16px; cursor: pointer; margin: 6px; background: #1f2640; color: #d9faff; border: 1px solid #35558c; }
+      #upgradeOptions { display: flex; flex-direction: column; }
+    </style>
+  </head>
+  <body>
+    <div id="hud">
+      <div>Vida</div>
+      <div class="bar"><div id="hpFill" class="fill"></div></div>
+      <div>Nível: <span id="level">1</span></div>
+      <div>XP: <span id="xp">0</span></div>
+      <div>Tempo: <span id="time">00:00</span></div>
+    </div>
+
+    <div id="upgradeModal" class="overlay">
+      <h2>Escolha um upgrade</h2>
+      <div id="upgradeOptions"></div>
+    </div>
+
+    <div id="overlay" class="overlay">
+      <h1>Game Over</h1>
+      <p>Sobreviveu por <span id="finalTime">00:00</span></p>
+      <button id="restartBtn">Reiniciar</button>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
